@@ -1,4 +1,4 @@
-package com.encryption;
+package com.base.tool.encryption;
 
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
@@ -27,7 +27,7 @@ public class RSAUtils {
     /**
      * 签名算法
      * java.security.Signature#signatureInfo
-     *
+     * <p>
      * signatureInfo.put("sun.security.rsa.RSASignature$MD2withRSA", TRUE);
      * signatureInfo.put("sun.security.rsa.RSASignature$MD5withRSA", TRUE);
      * signatureInfo.put("sun.security.rsa.RSASignature$SHA1withRSA", TRUE);
@@ -59,14 +59,15 @@ public class RSAUtils {
 
     /**
      * RSA 公钥私钥大小
-     *  RSAUtils#MAX_ENCRYPT_BLOCK
-     *  RSAUtils#MAX_DECRYPT_BLOCK
+     * RSAUtils#MAX_ENCRYPT_BLOCK
+     * RSAUtils#MAX_DECRYPT_BLOCK
      * 这三个值是对应的
      */
     private static final int KEY_SIZE = 1024;
 
     /**
      * 生成密钥对(公钥和私钥)
+     *
      * @return
      */
     public static Map<String, Object> genKeyPair() throws NoSuchAlgorithmException {
@@ -83,6 +84,7 @@ public class RSAUtils {
 
     /**
      * 获取私钥
+     *
      * @param keyMap 密钥对
      */
     public static String getPrivateKey(Map<String, Object> keyMap) {
@@ -92,6 +94,7 @@ public class RSAUtils {
 
     /**
      * 获取公钥
+     *
      * @param keyMap 密钥对
      */
     public static String getPublicKey(Map<String, Object> keyMap) {
@@ -136,6 +139,7 @@ public class RSAUtils {
 
     /**
      * 私钥解密
+     *
      * @param encryptedData 已加密数据
      * @param privateKey    私钥(BASE64编码)
      */
@@ -151,6 +155,7 @@ public class RSAUtils {
 
     /**
      * 公钥解密
+     *
      * @param encryptedData 已加密数据
      * @param publicKey     公钥(BASE64编码)
      */
@@ -166,6 +171,7 @@ public class RSAUtils {
 
     /**
      * 公钥加密
+     *
      * @param data      源数据
      * @param publicKey 公钥(BASE64编码)
      * @return base64
@@ -183,6 +189,7 @@ public class RSAUtils {
 
     /**
      * 私钥加密
+     *
      * @param data       源数据
      * @param privateKey 私钥(BASE64编码)
      */
@@ -199,8 +206,9 @@ public class RSAUtils {
     /**
      * 分段处理加解密避免JDK的
      * Exception in thread "main" javax.crypto.IllegalBlockSizeException: Data must not be longer than 128 bytes
-     * @param cipher 加解密的密码对象
-     * @param data 加解密的数据
+     *
+     * @param cipher    加解密的密码对象
+     * @param data      加解密的数据
      * @param MAX_BLOCK 最大处理长度
      */
     private static byte[] segmented(Cipher cipher, byte[] data, final int MAX_BLOCK) throws Exception {
