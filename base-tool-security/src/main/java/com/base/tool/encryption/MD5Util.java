@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
  * @date: 2021-01-11 18:25
  * @description: MD5工具类
  **/
-public class MD5Utils {
+public class MD5Util {
 
     public static String toMD5(String plainText) {
         byte[] secretBytes = null;

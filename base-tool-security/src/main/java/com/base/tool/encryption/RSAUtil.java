@@ -15,9 +15,9 @@ import java.util.Map;
  * @author: jre
  * @date: 2021-01-08 18:24
  * @description: ras 加密工具
- * @url: https://gitee.com/jiangruyi/notebook/blob/master/UtilsClass/1001-RSAUtils.md
+ * @url: https://gitee.com/doudio/notebook/blob/master/UtilsClass/1001-RSAUtils.md
  **/
-public class RSAUtils {
+public class RSAUtil {
 
     /**
      * 加密算法RSA
