@@ -12,7 +12,7 @@ import java.util.List;
  * @description: https://gitee.com/jiangruyi/notebook/blob/master/JavaBase/java.io/io%E6%93%8D%E4%BD%9C%E4%B8%80%E8%A1%8C%E6%96%87%E4%BB%B6.md
  **/
 @Slf4j
-public class IOUtils {
+public class IOUtil {
 
     // 读
     public static List<String> readList(File file) {
